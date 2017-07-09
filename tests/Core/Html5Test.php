@@ -115,54 +115,85 @@ class Html5Test extends TestCase {
         $this->assertEquals($expected, $response);
     }
 
-    public function testButton() 
+   public function testButton() 
     {
-        
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->button("MyButton", "submit", "", ["class" => "myClass"]);
+        $expected = "<button type=\"submit\" class=\"myClass\">\n"
+                . "MyButton</button>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testLabel() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->label("myLabel", "parent", ["class" => "myClass"]);
+        $expected = "<label for=\"parent\" class=\"myClass\">\n"
+                . "myLabel</label>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testInput() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->input($name, $type, $value = null, $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testTd() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->td($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testTh() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->th($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testTr() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->tr($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testTbody() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->tbody($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testThead() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->thead($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
     public function testTable() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->table($content = "", $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
-
+    
     public function testRenderTable() 
     {
+        $m = new Leedch\Html\Core\Html5();
+        $response = $m->renderTable($head = [], $body = [], $attributes = []);
+        $expected = "";
         $this->assertEquals($expected, $response);
     }
 
