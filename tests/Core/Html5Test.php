@@ -47,88 +47,101 @@ class Html5Test extends TestCase {
 
     public function testHtml() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->html('test', ['lang' => 'de']);
+        $expected = "<html lang=\"de\">\n"
+                . "test</html>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testTitle() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->title('MyTitle');
+        $expected = "<title>\n"
+                . "MyTitle</title>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testHead() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->head('content');
+        $expected = "<head>\n"
+                . "content</head>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testBody() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->body('content');
+        $expected = "<body>\n"
+                . "content</body>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testForm() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testButton() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testLabel() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testInput() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testTd() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testTh() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testTr() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testTbody() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testThead() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testTable() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testRenderTable() 
     {
-        $this->assertEquals('your input', 'your input');
+        $this->assertEquals($expected, $response);
     }
 
     public function testDiv() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->div('content', ['class' => 'myClass']);
+        $expected = "<div class=\"myClass\">\n"
+                . "content</div>";
+        $this->assertEquals($expected, $response);
     }
-
-    public function testTag() 
-    {
-        $this->assertEquals('your input', 'your input');
-    }
-
-
 }
