@@ -43,6 +43,12 @@ class Html5Test extends TestCase {
         $response = $h->br();
         $expected = "<br />\n";
         $this->assertEquals($expected, $response);
+        
+        $response = $h->br(3);
+        $expected = "<br />\n"
+                   . "<br />\n"
+                   . "<br />\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testHtml() 
@@ -83,11 +89,35 @@ class Html5Test extends TestCase {
 
     public function testForm() 
     {
+        $h = new Html5();
+        $action = "myurl.php";
+        $content = "content";
+        $multipart = true;
+        $method = "post";
+        $attributes = [
+            "class" => "myClass"
+        ];
+        $response = $h->form($action, $content, $multipart, $method, $attributes);
+        $expected = "<form action=\"myurl.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"myClass\">\n"
+                . "content</form>\n";
+        $this->assertEquals($expected, $response);
+        
+        $action = "myurl2.php";
+        $content = "content";
+        $multipart = false;
+        $method = "get";
+        $attributes = [
+            "class" => "myClass"
+        ];
+        $response = $h->form($action, $content, $multipart, $method, $attributes);
+        $expected = "<form action=\"myurl2.php\" method=\"get\" class=\"myClass\">\n"
+                . "content</form>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testButton() 
     {
+        
         $this->assertEquals($expected, $response);
     }
 
