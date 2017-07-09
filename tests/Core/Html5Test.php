@@ -9,17 +9,38 @@ class Html5Test extends TestCase {
 
     public function testDocType() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->docType("utf-8");
+        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
+                ."<!DOCTYPE html>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testHtmlDocument() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $headers = "<myHeaderTag />";
+        $body = "<myBodyTag />";
+        $response = $h->htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
+        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
+                . "<!DOCTYPE html>\n"
+                . "<html lang=\"de\">\n"
+                . "<head>\n"
+                . "<myHeaderTag />\n"
+                . "</head>\n"
+                . "<body>\n"
+                . "<myBodyTag />\n"
+                . "</body>\n"
+                . "</html>\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testBr() 
     {
-        $this->assertEquals('your input', 'your input');
+        $h = new Html5();
+        $response = $h->br();
+        $expected = "<br />\n";
+        $this->assertEquals($expected, $response);
     }
 
     public function testHtml() 
