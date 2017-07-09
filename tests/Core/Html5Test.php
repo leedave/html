@@ -19,13 +19,15 @@ class Html5Test extends TestCase {
     public function testHtmlDocument() 
     {
         $h = new Html5();
-        $headers = "<myHeaderTag />";
-        $body = "<myBodyTag />";
+        $headers = "<myHeaderTag />\n";
+        $body = "<myBodyTag />\n";
         $response = $h->htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
         $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
                 . "<!DOCTYPE html>\n"
                 . "<html lang=\"de\">\n"
                 . "<head>\n"
+                . "<title>\n"
+                . "MyTitle</title>\n"
                 . "<myHeaderTag />\n"
                 . "</head>\n"
                 . "<body>\n"
