@@ -171,4 +171,8 @@ class Html5 extends Html{
         
         return $this->tag("table", $strHead.$strBody, $attributes);
     }
+    
+    public function div($content, $attributes = []) {
+        return $this->tag("div", $content, $attributes);
+    }
 }
