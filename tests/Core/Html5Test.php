@@ -141,7 +141,7 @@ class Html5Test extends TestCase {
         $h = new Html5();
         $response = $h->div('content', ['class' => 'myClass']);
         $expected = "<div class=\"myClass\">\n"
-                . "content</div>";
+                . "content</div>\n";
         $this->assertEquals($expected, $response);
     }
 }
