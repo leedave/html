@@ -136,16 +136,24 @@ class Html5Test extends TestCase {
     public function testInput() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->input($name, $type, $value = null, $attributes = []);
-        $expected = "";
+        $name = "inputName";
+        $type = "text";
+        $value = null;
+        $attributes = ["class" => "myClass", "id" => "myInput"];
+        $response = $m->input($name, $type, $value, $attributes = []);
+        $expected = "<input name=\"inputName\" type=\"text\" class=\"myClass\" id=\"myInput\" />\n";
+        $this->assertEquals($expected, $response);
+        $value = "defaultValue";
+        $expected = "<input name=\"inputName\" type=\"text\" value=\"defaultValue\" class=\"myClass\" id=\"myInput\" />\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testTd() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->td($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->td("Cell Content", ["class" => "myClass"]);
+        $expected = "<td class=\"myClass\">\n"
+                . "Cell Content</td>\n";
         $this->assertEquals($expected, $response);
     }
 
