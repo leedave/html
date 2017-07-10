@@ -160,48 +160,76 @@ class Html5Test extends TestCase {
     public function testTh() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->th($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->th('Th Content', ["class" => "myClass"]);
+        $expected = "<th class=\"myClass\">\n"
+                    . "Th Content</th>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testTr() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->tr($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->tr("Tr Content", ["class" => "myClass"]);
+        $expected = "<tr class=\"myclass\">\n"
+                    . "Tr Content</tr>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testTbody() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->tbody($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->tbody("Tbody Content", ["class" => "myClass"]);
+        $expected = "<tbody class=\"myClass\">\n"
+                    ."Tbody Content</tbody>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testThead() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->thead($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->thead("Thead Content", ["class" => "myClass"]);
+        $expected = "<thead class=\"myClass\">\n"
+                    . "Thead Content</thead>\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testTable() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->table($content = "", $attributes = []);
-        $expected = "";
+        $response = $m->table("Table Content", ["class" => "myClass", "id" => "tableId"]);
+        $expected = "<table class=\"myClass\" id=\"tableId\">\n"
+                    . "Table Content</table>\n";
         $this->assertEquals($expected, $response);
     }
     
     public function testRenderTable() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->renderTable($head = [], $body = [], $attributes = []);
-        $expected = "";
+        $response = $m->renderTable(["head1", "head2"], [["cell1Row1", "cell2Row1"], ["cell1Row2", "cell2Row2"]], ["class" => "myClass"]);
+        $expected = "<table class=\"myClass\">\n"
+                    ."<thead>\n"
+                    ."<tr>\n"
+                    ."<th>\n"
+                    ."head1</th>\n"
+                    ."<th>\n"
+                    ."head2</th>\n"
+                    ."</tr>\n"
+                    ."</thead>\n"
+                    ."<tbody>\n"
+                    ."<tr>\n"
+                    ."<td>\n"
+                    ."cell1Row1</td>\n"
+                    ."<td>\n"
+                    ."cell2Row1</td>\n"
+                    ."</tr>\n"
+                    ."<tr>\n"
+                    ."<td>\n"
+                    ."cell1Row2</td>\n"
+                    ."<td>\n"
+                    ."cell2Row2</td>\n"
+                    ."</tr>\n"
+                    ."</tbody>\n"
+                    ."</table>\n";
         $this->assertEquals($expected, $response);
     }
 
