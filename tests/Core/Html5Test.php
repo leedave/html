@@ -170,7 +170,7 @@ class Html5Test extends TestCase {
     {
         $m = new \Leedch\Html\Core\Html5();
         $response = $m->tr("Tr Content", ["class" => "myClass"]);
-        $expected = "<tr class=\"myclass\">\n"
+        $expected = "<tr class=\"myClass\">\n"
                     . "Tr Content</tr>\n";
         $this->assertEquals($expected, $response);
     }
