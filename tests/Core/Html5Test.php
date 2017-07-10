@@ -140,10 +140,11 @@ class Html5Test extends TestCase {
         $type = "text";
         $value = null;
         $attributes = ["class" => "myClass", "id" => "myInput"];
-        $response = $m->input($name, $type, $value, $attributes = []);
+        $response = $m->input($name, $type, $value, $attributes);
         $expected = "<input name=\"inputName\" type=\"text\" class=\"myClass\" id=\"myInput\" />\n";
         $this->assertEquals($expected, $response);
         $value = "defaultValue";
+        $response = $m->input($name, $type, $value, $attributes);
         $expected = "<input name=\"inputName\" type=\"text\" value=\"defaultValue\" class=\"myClass\" id=\"myInput\" />\n";
         $this->assertEquals($expected, $response);
     }
@@ -205,7 +206,9 @@ class Html5Test extends TestCase {
     public function testRenderTable() 
     {
         $m = new \Leedch\Html\Core\Html5();
-        $response = $m->renderTable(["head1", "head2"], [["cell1Row1", "cell2Row1"], ["cell1Row2", "cell2Row2"]], ["class" => "myClass"]);
+        $arrHead = [["head1", "head2"]];
+        $arrBody = [["cell1Row1", "cell2Row1"], ["cell1Row2", "cell2Row2"]];
+        $response = $m->renderTable($arrHead, $arrBody, ["class" => "myClass"]);
         $expected = "<table class=\"myClass\">\n"
                     ."<thead>\n"
                     ."<tr>\n"
