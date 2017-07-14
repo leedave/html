@@ -9,6 +9,7 @@
 - html
 - input
 - label
+- span
 - table
 - tbody
 - td
