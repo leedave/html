@@ -7,36 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class Html5Test extends TestCase {
 
-    public function testDocType() 
-    {
-        $h = new Html5();
-        $response = $h->docType("utf-8");
-        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
-                ."<!DOCTYPE html>\n";
-        $this->assertEquals($expected, $response);
-    }
-
-    public function testHtmlDocument() 
-    {
-        $h = new Html5();
-        $headers = "<myHeaderTag />\n";
-        $body = "<myBodyTag />\n";
-        $response = $h->htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
-        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
-                . "<!DOCTYPE html>\n"
-                . "<html lang=\"de\">\n"
-                . "<head>\n"
-                . "<title>\n"
-                . "MyTitle</title>\n"
-                . "<myHeaderTag />\n"
-                . "</head>\n"
-                . "<body>\n"
-                . "<myBodyTag />\n"
-                . "</body>\n"
-                . "</html>\n";
-        $this->assertEquals($expected, $response);
-    }
-
     public function testBr() 
     {
         $h = new Html5();
@@ -203,6 +173,56 @@ class Html5Test extends TestCase {
         $this->assertEquals($expected, $response);
     }
     
+    public function testDiv() 
+    {
+        $h = new Html5();
+        $response = $h->div('content', ['class' => 'myClass']);
+        $expected = "<div class=\"myClass\">\n"
+                . "content</div>\n";
+        $this->assertEquals($expected, $response);
+    }
+    
+    public function testSpan() 
+    {
+        $h = new Html5();
+        $response = $h->span('content', ['class' => 'myClass']);
+        $expected = "<span class=\"myClass\">\n"
+                . "content</span>\n";
+        $this->assertEquals($expected, $response);
+    }
+    
+    /***** Special Methods *****/
+    
+    public function testDocType() 
+    {
+        $h = new Html5();
+        $response = $h->docType("utf-8");
+        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
+                ."<!DOCTYPE html>\n";
+        $this->assertEquals($expected, $response);
+    }
+
+    public function testHtmlDocument() 
+    {
+        $h = new Html5();
+        $headers = "<myHeaderTag />\n";
+        $body = "<myBodyTag />\n";
+        $response = $h->htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
+        $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
+                . "<!DOCTYPE html>\n"
+                . "<html lang=\"de\">\n"
+                . "<head>\n"
+                . "<title>\n"
+                . "MyTitle</title>\n"
+                . "<myHeaderTag />\n"
+                . "</head>\n"
+                . "<body>\n"
+                . "<myBodyTag />\n"
+                . "</body>\n"
+                . "</html>\n";
+        $this->assertEquals($expected, $response);
+    }
+    
     public function testRenderTable() 
     {
         $m = new \Leedch\Html\Core\Html5();
@@ -233,15 +253,6 @@ class Html5Test extends TestCase {
                     ."</tr>\n"
                     ."</tbody>\n"
                     ."</table>\n";
-        $this->assertEquals($expected, $response);
-    }
-
-    public function testDiv() 
-    {
-        $h = new Html5();
-        $response = $h->div('content', ['class' => 'myClass']);
-        $expected = "<div class=\"myClass\">\n"
-                . "content</div>\n";
         $this->assertEquals($expected, $response);
     }
 }

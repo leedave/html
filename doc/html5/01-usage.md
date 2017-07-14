@@ -1,8 +1,9 @@
-# Using Html
+# Using Html5
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Tags](#Tags)
+- [Supported Tags](02-supported-tags.md)
+- [Special Methods](03-special-methods.md)
 
 ## Installation
 
@@ -50,3 +51,7 @@ Results in
 
 ## Tags
 Currently supported Tags are listed in [Supported Tags](02-supported-tags.md)
+
+## Special Methods
+There are some special methods, designed to make more complex structures easy
+[Special Methods](03-special-methods.md)
