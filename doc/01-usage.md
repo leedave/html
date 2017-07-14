@@ -1,7 +1,8 @@
 # Using Html
 
 - [Installation](#Installation)
-- [Basic Usage](#Basic Usage)
+- [Usage](#Usage)
+- [Tags](#Tags)
 
 ## Installation
 
@@ -13,7 +14,7 @@ composer require leedch/html
 
 You can also just get the code @ Github [Leedch/Html](https://github.com/leedave/html)
 
-## Basic Usage
+## Usage
 
 Most Html Tags can be printed by just calling the tag name on the Html class. 
 
@@ -29,3 +30,24 @@ Results in
 ```html
 <div class="myClass" id="divId">My Div Content</div>
 ```
+
+## Tags
+Currently supported Tags are
+
+- body
+- br
+- button
+- div
+- form
+- head
+- html
+- input
+- title
+- label
+- th
+- td
+- tr
+- tbody
+- thead
+- table```
+-
