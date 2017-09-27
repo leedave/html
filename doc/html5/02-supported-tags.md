@@ -1,5 +1,6 @@
 # Supported HTML Tags
 
+- a
 - body
 - br
 - button
@@ -17,3 +18,6 @@
 - thead
 - title
 - tr
+- ul
+- ol
+- li

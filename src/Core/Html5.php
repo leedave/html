@@ -251,6 +251,38 @@ class Html5 extends Html{
         return $this->tag("tr", $content, $attributes);
     }
     
+    /**
+     * Render unordered list tag
+     * @param string $content
+     * @param array $attributes
+     * @return string
+     */
+    public function ul($content = "", $attributes = []) 
+    {
+        return $this->tag("ul", $content, $attributes);
+    }
+    
+    /**
+     * Render Ordered List
+     * @param string $content
+     * @param array $attributes
+     * @return string
+     */
+    public function ol($content = "", $attributes = []) 
+    {
+        return $this->tag("ol", $content, $attributes);
+    }
+    
+    /**
+     * Render List Item Tag
+     * @param string $content
+     * @param array $attributes
+     * @return string
+     */
+    public function li($content = "", $attributes = []) 
+    {
+        return $this->tag("li", $content, $attributes);
+    }
     
     /****** Special Methods ******/
     
