@@ -12,6 +12,17 @@ use Leedch\Html\Core\Html;
 class Html5 extends Html{
     
     /**
+     * Create a Hyperlink
+     * @param type $content
+     * @param type $attributes
+     * @return type
+     */
+    public function a($content, $attributes)
+    {
+        return $this->tag("a", $content, $attributes);
+    }
+    
+    /**
      * Creates the Body Tag
      * 
      * @param string $content
