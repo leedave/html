@@ -335,22 +335,14 @@ class Html5 extends Html{
         $strBody = "";
         
         foreach ($head as $thRow) {
-            $strRow = "";
-            foreach ($thRow as $th) {
-                $strRow .= $this->th($th);
-            }
-            $strHead .= $this->tr($strRow);
+            $strHead .= $this->renderTableHeaderRow($thRow);
         }
         if ($strHead != "") {
             $strHead = $this->thead($strHead);
         }
         
         foreach ($body as $tr) {
-            $strRow = "";
-            foreach ($tr as $td) {
-                $strRow .= $this->td($td);
-            }
-            $strBody .= $this->tr($strRow);
+            $strBody .= $this->renderTableRow($tr);
         }
         if ($strBody != "") {
             $strBody = $this->tbody($strBody);
@@ -359,4 +351,31 @@ class Html5 extends Html{
         return $this->tag("table", $strHead.$strBody, $attributes);
     }
     
+    /**
+     * Make a table row <tr><td>bla</td></tr>
+     * @param array $arrCells
+     * @return string
+     */
+    public function renderTableRow(array $arrCells)
+    {
+        $strRow = "";
+        foreach ($arrCells as $td) {
+            $strRow .= $this->td($td);
+        }
+        return $this->tr($strRow);
+    }
+    
+    /**
+     * Make a table header row <tr><th>bla</th></tr>
+     * @param array $arrCells
+     * @return type
+     */
+    public function renderTableHeaderRow(array $arrCells)
+    {
+        $strRow = "";
+        foreach ($arrCells as $th) {
+            $strRow .= $this->th($th);
+        }
+        return $this->tr($strRow);
+    }
 }
