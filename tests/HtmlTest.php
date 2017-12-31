@@ -1,8 +1,8 @@
 <?php
 
-namespace Leedch\Html\Core;
+namespace Leedch\Html;
 
-use Leedch\Html\Core\Html;
+use Leedch\Html\Html;
 use PHPUnit\Framework\TestCase;
 
 class HtmlTest extends TestCase {
