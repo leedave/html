@@ -211,7 +211,7 @@ class Html5 extends Html{
         string $label, 
         string $type = "submit", 
         string $onclick = null, 
-        string $attributes = []
+        array $attributes = []
     ) : string
     {
         $buttonPreAttributes = [
