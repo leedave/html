@@ -17,7 +17,7 @@ class Html5 extends Html{
      * @param array $attributes
      * @return string
      */
-    public static function a(string $content, array $attributes) : string
+    public static function a(string $content, array $attributes = []) : string
     {
         return self::tag("a", $content, $attributes);
     }
@@ -142,8 +142,7 @@ class Html5 extends Html{
     ) : string
     {
         return self::tag("bdo", $content, $attributes);
-    }
-    
+    }    
     
     /**
      * <blockquote> Text from other source use attr "cite"
@@ -157,9 +156,7 @@ class Html5 extends Html{
     ) : string
     {
         return self::tag("blockquote", $content, $attributes);
-    }
-    
-    
+    }        
     
     /**
      * Address Tag
@@ -680,9 +677,9 @@ class Html5 extends Html{
      * @param string $content
      * @return string HTML Code
      */
-    public static function head(string $content) : string 
+    public static function head(string $content, array $attributes = []) : string 
     {
-        return self::tag("head", $content);
+        return self::tag("head", $content, $attributes);
     }
     
     /**

@@ -4,6 +4,23 @@ All Notable changes to `leech/html` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [2.0.2] ##
+
+### Added ###
+- Unit Tests for all basic tags using string $content and optional $attributes = []
+
+### Deprecated ###
+- Nothing
+
+### Fixed ###
+- Nothing
+
+### Removed ###
+- Nothing
+
+### Security ###
+- Nothing
+
 ## [2.0.0] ##
 
 ### Added ###
@@ -15,15 +32,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Deprecated ###
 - Version 1.x.x
 - PHP Versions below 7.0
-
-### Fixed ###
-- Nothing
-
-### Removed ###
-- Nothing
-
-### Security ###
-- Nothing
 
 ## [1.0.3] ##
 

@@ -235,4 +235,107 @@ class Html5Test extends TestCase {
                     ."</table>\n";
         $this->assertEquals($expected, $response);
     }
+    
+    protected function basicTagTest($tagName)
+    {
+        $emptyContent = H::$tagName("");
+        $this->assertEquals("<".$tagName." />\n", $emptyContent);
+        $textContent = H::$tagName("My hidden secret");
+        $this->assertEquals("<".$tagName.">\nMy hidden secret</".$tagName.">\n", $textContent);
+        $oneAttr = H::$tagName("I have an attribute", ["class" => "oneAttrib"]);
+        $this->assertEquals("<".$tagName." class=\"oneAttrib\">\nI have an attribute</".$tagName.">\n", $oneAttr);
+        $multiAttr = H::$tagName("I have attributes", ["class" => "attribs", "id" => "myId", "data-id" => 5]);
+        $this->assertEquals("<".$tagName." class=\"attribs\" id=\"myId\" data-id=\"5\">\nI have attributes</".$tagName.">\n", $multiAttr);
+    }
+    
+    public function testAllBasicTags()
+    {
+        //All HTML Tags that are triggered with params $content and optional $attributes
+        $arrBasicTags = [
+            "a",
+            "abbr",
+            "address",
+            "article",
+            "aside",
+            "audio",
+            "b",
+            "bdi",
+            "bdo",
+            "blockquote",
+            "body",
+            "caption",
+            "cite",
+            "code",
+            "colgroup",
+            "data",
+            "datalist",
+            "dd",
+            "del",
+            "details",
+            "dfn",
+            "dialog",
+            "div",
+            "dl",
+            "dt",
+            "em",
+            "embed",
+            "figcaption",
+            "figure",
+            "footer",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "head",
+            "header",
+            "html",
+            "iframe",
+            "ins",
+            "kbd",
+            "legend",
+            "link",
+            "main",
+            "map",
+            "mark",
+            "menu",
+            "menuitem",
+            "meter",
+            "nav",
+            "noscript",
+            "object",
+            "optgroup",
+            "option",
+            "output",
+            "p",
+            "picture",
+            "pre",
+            "q",
+            "rp",
+            "rt",
+            "ruby",
+            "s",
+            "samp",
+            "section",
+            "small",
+            "strong",
+            "sub",
+            "summary",
+            "sup",
+            "textarea",
+            "tfoot",
+            "thead",
+            "time",
+            "title",
+            "track",
+            "u",
+            "video",
+            "wbr",
+        ];
+        
+        foreach ($arrBasicTags as $tag) {
+            $this->basicTagTest($tag);
+        }
+    }
 }
