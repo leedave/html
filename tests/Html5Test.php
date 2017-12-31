@@ -1,20 +1,19 @@
 <?php
 
-namespace Leedch\Html\Core;
+namespace Leedch\Html;
 
-use Leedch\Html\Core\Html5;
+use Leedch\Html\Html5 as H;
 use PHPUnit\Framework\TestCase;
 
 class Html5Test extends TestCase {
 
     public function testBr() 
     {
-        $h = new Html5();
-        $response = $h->br();
+        $response = H::br();
         $expected = "<br />\n";
         $this->assertEquals($expected, $response);
         
-        $response = $h->br(3);
+        $response = H::br(3);
         $expected = "<br />\n"
                    . "<br />\n"
                    . "<br />\n";
@@ -23,8 +22,7 @@ class Html5Test extends TestCase {
 
     public function testHtml() 
     {
-        $h = new Html5();
-        $response = $h->html('test', ['lang' => 'de']);
+        $response = H::html('test', ['lang' => 'de']);
         $expected = "<html lang=\"de\">\n"
                 . "test</html>\n";
         $this->assertEquals($expected, $response);
@@ -32,8 +30,7 @@ class Html5Test extends TestCase {
 
     public function testTitle() 
     {
-        $h = new Html5();
-        $response = $h->title('MyTitle');
+        $response = H::title('MyTitle');
         $expected = "<title>\n"
                 . "MyTitle</title>\n";
         $this->assertEquals($expected, $response);
@@ -41,8 +38,7 @@ class Html5Test extends TestCase {
 
     public function testHead() 
     {
-        $h = new Html5();
-        $response = $h->head('content');
+        $response = H::head('content');
         $expected = "<head>\n"
                 . "content</head>\n";
         $this->assertEquals($expected, $response);
@@ -50,8 +46,7 @@ class Html5Test extends TestCase {
 
     public function testBody() 
     {
-        $h = new Html5();
-        $response = $h->body('content');
+        $response = H::body('content');
         $expected = "<body>\n"
                 . "content</body>\n";
         $this->assertEquals($expected, $response);
@@ -59,7 +54,6 @@ class Html5Test extends TestCase {
 
     public function testForm() 
     {
-        $h = new Html5();
         $action = "myurl.php";
         $content = "content";
         $multipart = true;
@@ -67,7 +61,7 @@ class Html5Test extends TestCase {
         $attributes = [
             "class" => "myClass"
         ];
-        $response = $h->form($action, $content, $multipart, $method, $attributes);
+        $response = H::form($action, $content, $multipart, $method, $attributes);
         $expected = "<form action=\"myurl.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"myClass\">\n"
                 . "content</form>\n";
         $this->assertEquals($expected, $response);
@@ -79,7 +73,7 @@ class Html5Test extends TestCase {
         $attributes = [
             "class" => "myClass"
         ];
-        $response = $h->form($action, $content, $multipart, $method, $attributes);
+        $response = H::form($action, $content, $multipart, $method, $attributes);
         $expected = "<form action=\"myurl2.php\" method=\"get\" class=\"myClass\">\n"
                 . "content</form>\n";
         $this->assertEquals($expected, $response);
@@ -87,8 +81,7 @@ class Html5Test extends TestCase {
 
    public function testButton() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->button("MyButton", "submit", "", ["class" => "myClass"]);
+        $response = H::button("MyButton", "submit", "", ["class" => "myClass"]);
         $expected = "<button type=\"submit\" class=\"myClass\">\n"
                 . "MyButton</button>\n";
         $this->assertEquals($expected, $response);
@@ -96,8 +89,7 @@ class Html5Test extends TestCase {
 
     public function testLabel() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->label("myLabel", "parent", ["class" => "myClass"]);
+        $response = H::label("myLabel", "parent", ["class" => "myClass"]);
         $expected = "<label for=\"parent\" class=\"myClass\">\n"
                 . "myLabel</label>\n";
         $this->assertEquals($expected, $response);
@@ -105,24 +97,22 @@ class Html5Test extends TestCase {
 
     public function testInput() 
     {
-        $m = new \Leedch\Html\Core\Html5();
         $name = "inputName";
         $type = "text";
         $value = null;
         $attributes = ["class" => "myClass", "id" => "myInput"];
-        $response = $m->input($name, $type, $value, $attributes);
+        $response = H::input($name, $type, $value, $attributes);
         $expected = "<input name=\"inputName\" type=\"text\" class=\"myClass\" id=\"myInput\" />\n";
         $this->assertEquals($expected, $response);
         $value = "defaultValue";
-        $response = $m->input($name, $type, $value, $attributes);
+        $response = H::input($name, $type, $value, $attributes);
         $expected = "<input name=\"inputName\" type=\"text\" value=\"defaultValue\" class=\"myClass\" id=\"myInput\" />\n";
         $this->assertEquals($expected, $response);
     }
 
     public function testTd() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->td("Cell Content", ["class" => "myClass"]);
+        $response = H::td("Cell Content", ["class" => "myClass"]);
         $expected = "<td class=\"myClass\">\n"
                 . "Cell Content</td>\n";
         $this->assertEquals($expected, $response);
@@ -130,8 +120,7 @@ class Html5Test extends TestCase {
 
     public function testTh() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->th('Th Content', ["class" => "myClass"]);
+        $response = H::th('Th Content', ["class" => "myClass"]);
         $expected = "<th class=\"myClass\">\n"
                     . "Th Content</th>\n";
         $this->assertEquals($expected, $response);
@@ -139,8 +128,7 @@ class Html5Test extends TestCase {
 
     public function testTr() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->tr("Tr Content", ["class" => "myClass"]);
+        $response = H::tr("Tr Content", ["class" => "myClass"]);
         $expected = "<tr class=\"myClass\">\n"
                     . "Tr Content</tr>\n";
         $this->assertEquals($expected, $response);
@@ -148,8 +136,7 @@ class Html5Test extends TestCase {
 
     public function testTbody() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->tbody("Tbody Content", ["class" => "myClass"]);
+        $response = H::tbody("Tbody Content", ["class" => "myClass"]);
         $expected = "<tbody class=\"myClass\">\n"
                     ."Tbody Content</tbody>\n";
         $this->assertEquals($expected, $response);
@@ -157,8 +144,7 @@ class Html5Test extends TestCase {
 
     public function testThead() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->thead("Thead Content", ["class" => "myClass"]);
+        $response = H::thead("Thead Content", ["class" => "myClass"]);
         $expected = "<thead class=\"myClass\">\n"
                     . "Thead Content</thead>\n";
         $this->assertEquals($expected, $response);
@@ -166,8 +152,7 @@ class Html5Test extends TestCase {
 
     public function testTable() 
     {
-        $m = new \Leedch\Html\Core\Html5();
-        $response = $m->table("Table Content", ["class" => "myClass", "id" => "tableId"]);
+        $response = H::table("Table Content", ["class" => "myClass", "id" => "tableId"]);
         $expected = "<table class=\"myClass\" id=\"tableId\">\n"
                     . "Table Content</table>\n";
         $this->assertEquals($expected, $response);
@@ -175,8 +160,7 @@ class Html5Test extends TestCase {
     
     public function testDiv() 
     {
-        $h = new Html5();
-        $response = $h->div('content', ['class' => 'myClass']);
+        $response = H::div('content', ['class' => 'myClass']);
         $expected = "<div class=\"myClass\">\n"
                 . "content</div>\n";
         $this->assertEquals($expected, $response);
@@ -184,8 +168,7 @@ class Html5Test extends TestCase {
     
     public function testSpan() 
     {
-        $h = new Html5();
-        $response = $h->span('content', ['class' => 'myClass']);
+        $response = H::span('content', ['class' => 'myClass']);
         $expected = "<span class=\"myClass\">\n"
                 . "content</span>\n";
         $this->assertEquals($expected, $response);
@@ -195,8 +178,7 @@ class Html5Test extends TestCase {
     
     public function testDocType() 
     {
-        $h = new Html5();
-        $response = $h->docType("utf-8");
+        $response = H::docType("utf-8");
         $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
                 ."<!DOCTYPE html>\n";
         $this->assertEquals($expected, $response);
@@ -204,10 +186,9 @@ class Html5Test extends TestCase {
 
     public function testHtmlDocument() 
     {
-        $h = new Html5();
         $headers = "<myHeaderTag />\n";
         $body = "<myBodyTag />\n";
-        $response = $h->htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
+        $response = H::htmlDocument("MyTitle", $headers, $body, "de", "utf-8");
         $expected = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
                 . "<!DOCTYPE html>\n"
                 . "<html lang=\"de\">\n"
@@ -225,10 +206,9 @@ class Html5Test extends TestCase {
     
     public function testRenderTable() 
     {
-        $m = new \Leedch\Html\Core\Html5();
         $arrHead = [["head1", "head2"]];
         $arrBody = [["cell1Row1", "cell2Row1"], ["cell1Row2", "cell2Row2"]];
-        $response = $m->renderTable($arrHead, $arrBody, ["class" => "myClass"]);
+        $response = H::renderTable($arrHead, $arrBody, ["class" => "myClass"]);
         $expected = "<table class=\"myClass\">\n"
                     ."<thead>\n"
                     ."<tr>\n"

@@ -1,6 +1,6 @@
 <?php
 
-namespace Leedch\Html\Core;
+namespace Leedch\Html;
 
 /**
  * A basic class for writing HTML
@@ -17,7 +17,13 @@ class Html {
      * @param bool $eol         Insert Line Break after Tag
      * @return string
      */
-    public function tag($name, $content = "", $attributes = [], $eol = true) {
+    public static function tag(
+        string $name, 
+        string $content = null, 
+        array $attributes = [], 
+        bool $eol = true
+    ) : string 
+    {
         $strEol = $eol?PHP_EOL:"";
         $strAttributes = "";
         $arrStrAttributes = [];

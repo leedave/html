@@ -5,8 +5,7 @@
 Creates the default first two lines of a HTML document
 
 ```php
-$h new \Leedch\Html\Html5();
-echo $h->docType("utf-8");
+echo Html5::docType("utf-8");
 ```
 
 Results in 
@@ -20,8 +19,7 @@ Results in
 Creates a full HTML5 document
 
 ```php
-$h new \Leedch\Html\Html5();
-echo $h->htmlDocument("MyTitle", "headers", "body", "de", "utf-8");
+echo Html5::htmlDocument("MyTitle", "headers", "body", "de", "utf-8");
 ```
 
 Results in 
@@ -46,10 +44,9 @@ body
 This makes creating the rather complex table structures easier
 
 ```php
-$h new \Leedch\Html\Html5();
 $arrHead = [["head1", "head2"]];
 $arrBody = [["cell1Row1", "cell2Row1"], ["cell1Row2", "cell2Row2"]];
-echo = $h->renderTable($arrHead, $arrBody, ["class" => "myClass"]);
+echo = Html5::renderTable($arrHead, $arrBody, ["class" => "myClass"]);
 ```
 
 Results in 
