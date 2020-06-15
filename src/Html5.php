@@ -19,7 +19,7 @@ class Html5 extends Html{
      */
     public static function a(string $content, array $attributes = []) : string
     {
-        return self::tag("a", $content, $attributes);
+        return static::tag("a", $content, $attributes);
     }
     
     /**
@@ -30,7 +30,7 @@ class Html5 extends Html{
      */
     public static function abbr(string $content, array $attributes = []) : string
     {
-        return self::tag("abbr", $content, $attributes);
+        return static::tag("abbr", $content, $attributes);
     }
     
     /**
@@ -44,7 +44,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("area", $content, $attributes);
+        return static::tag("area", $content, $attributes);
     }
     
     /**
@@ -58,7 +58,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("article", $content, $attributes);
+        return static::tag("article", $content, $attributes);
     }
     
     /**
@@ -72,7 +72,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("aside", $content, $attributes);
+        return static::tag("aside", $content, $attributes);
     }
     
     /**
@@ -86,7 +86,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("audio", $content, $attributes);
+        return static::tag("audio", $content, $attributes);
     }
     
     /**
@@ -100,7 +100,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("b", $content, $attributes);
+        return static::tag("b", $content, $attributes);
     }
     
     /**
@@ -113,7 +113,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("base", null, $attributes);
+        return static::tag("base", null, $attributes);
     }
     
     /**
@@ -127,7 +127,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("bdi", $content, $attributes);
+        return static::tag("bdi", $content, $attributes);
     }
     
     /**
@@ -141,7 +141,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("bdo", $content, $attributes);
+        return static::tag("bdo", $content, $attributes);
     }    
     
     /**
@@ -155,7 +155,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("blockquote", $content, $attributes);
+        return static::tag("blockquote", $content, $attributes);
     }        
     
     /**
@@ -166,7 +166,7 @@ class Html5 extends Html{
      */
     public static function address(string $content, array $attributes = []) : string
     {
-        return self::tag("address", $content, $attributes);
+        return static::tag("address", $content, $attributes);
     }
     
     /**
@@ -178,7 +178,7 @@ class Html5 extends Html{
      */
     public static function body(string $content, array $attributes = []) : string
     {
-        return self::tag("body", $content, $attributes);
+        return static::tag("body", $content, $attributes);
     }
        
     /**
@@ -191,7 +191,7 @@ class Html5 extends Html{
     {
         $output = "";
         for ($i = 0; $i < $amount; $i++) {
-            $output .= self::tag("br");
+            $output .= static::tag("br");
         }
         return $output;
     }
@@ -220,7 +220,7 @@ class Html5 extends Html{
         }
         $buttonAttributes = array_merge($buttonPreAttributes, $attributes);        
         
-        return self::tag("button", $label, $buttonAttributes);
+        return static::tag("button", $label, $buttonAttributes);
     }
     
     
@@ -235,7 +235,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("canvas", $content, $attributes);
+        return static::tag("canvas", $content, $attributes);
     }
     
     
@@ -250,7 +250,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("caption", $content, $attributes);
+        return static::tag("caption", $content, $attributes);
     }
     
     
@@ -265,7 +265,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("cite", $content, $attributes);
+        return static::tag("cite", $content, $attributes);
     }
     
     
@@ -280,7 +280,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("code", $content, $attributes);
+        return static::tag("code", $content, $attributes);
     }
     
     
@@ -293,7 +293,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("col", null, $attributes);
+        return static::tag("col", null, $attributes);
     }
     
     
@@ -308,7 +308,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("colgroup", $content, $attributes);
+        return static::tag("colgroup", $content, $attributes);
     }
     
     
@@ -323,7 +323,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("data", $content, $attributes);
+        return static::tag("data", $content, $attributes);
     }
     
     /**
@@ -338,7 +338,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("datalist", $content, $attributes);
+        return static::tag("datalist", $content, $attributes);
     }
     
     /**
@@ -352,7 +352,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("dd", $content, $attributes);
+        return static::tag("dd", $content, $attributes);
     }
     
     /**
@@ -366,7 +366,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("del", $content, $attributes);
+        return static::tag("del", $content, $attributes);
     }
     
     /**
@@ -380,7 +380,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("details", $content, $attributes);
+        return static::tag("details", $content, $attributes);
     }
     
     /**
@@ -394,7 +394,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("dfn", $content, $attributes);
+        return static::tag("dfn", $content, $attributes);
     }
     
     /**
@@ -408,7 +408,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("dialog", $content, $attributes);
+        return static::tag("dialog", $content, $attributes);
     }
     
     /**
@@ -420,7 +420,7 @@ class Html5 extends Html{
      */
     public static function div(string $content, array $attributes = []) : string
     {
-        return self::tag("div", $content, $attributes);
+        return static::tag("div", $content, $attributes);
     }
     
     /**
@@ -434,7 +434,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("dl", $content, $attributes);
+        return static::tag("dl", $content, $attributes);
     }
     
     /**
@@ -448,7 +448,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("dt", $content, $attributes);
+        return static::tag("dt", $content, $attributes);
     }
     
     /**
@@ -462,7 +462,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("em", $content, $attributes);
+        return static::tag("em", $content, $attributes);
     }
     
     /**
@@ -476,7 +476,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("embed", $content, $attributes);
+        return static::tag("embed", $content, $attributes);
     }
     
     /**
@@ -492,9 +492,9 @@ class Html5 extends Html{
     ) : string
     {
         if ($legend) {
-            $content = self::legend($legend);
+            $content = static::legend($legend);
         }
-        return self::tag("fieldset", $content, $attributes);
+        return static::tag("fieldset", $content, $attributes);
     }
     
     /**
@@ -508,7 +508,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("figcaption", $content, $attributes);
+        return static::tag("figcaption", $content, $attributes);
     }
     
     /**
@@ -522,7 +522,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("figure", $content, $attributes);
+        return static::tag("figure", $content, $attributes);
     }
     
     /**
@@ -536,7 +536,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("footer", $content, $attributes);
+        return static::tag("footer", $content, $attributes);
     }
     
     /**
@@ -569,7 +569,7 @@ class Html5 extends Html{
         
         $formAttributes = array_merge($formPreAttributes, $attributes);
         
-        return self::tag("form", $content, $formAttributes);
+        return static::tag("form", $content, $formAttributes);
     }
     
     /**
@@ -584,7 +584,7 @@ class Html5 extends Html{
         $attributes = []
     ) : string
     {
-        return self::tag("h".$level, $content, $attributes);
+        return static::tag("h".$level, $content, $attributes);
     }
     
     /**
@@ -598,7 +598,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 1, $attributes);
+        return static::h($content, 1, $attributes);
     }
     
     /**
@@ -612,7 +612,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 2, $attributes);
+        return static::h($content, 2, $attributes);
     }
     
     /**
@@ -626,7 +626,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 3, $attributes);
+        return static::h($content, 3, $attributes);
     }
     
     /**
@@ -640,7 +640,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 4, $attributes);
+        return static::h($content, 4, $attributes);
     }
     
     /**
@@ -654,7 +654,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 5, $attributes);
+        return static::h($content, 5, $attributes);
     }
     
     /**
@@ -668,7 +668,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::h($content, 6, $attributes);
+        return static::h($content, 6, $attributes);
     }
     
     /**
@@ -679,7 +679,7 @@ class Html5 extends Html{
      */
     public static function head(string $content, array $attributes = []) : string 
     {
-        return self::tag("head", $content, $attributes);
+        return static::tag("head", $content, $attributes);
     }
     
     /**
@@ -693,7 +693,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("header", $content, $attributes);
+        return static::tag("header", $content, $attributes);
     }
     
     /**
@@ -706,7 +706,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("hr", null, $attributes);
+        return static::tag("hr", null, $attributes);
     }
     
     /**
@@ -720,7 +720,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string 
     {
-        return self::tag("html", $content, $attributes);
+        return static::tag("html", $content, $attributes);
     }
     
     /**
@@ -731,7 +731,7 @@ class Html5 extends Html{
      */
     public static function i(string $content = null, array $attributes = []) : string
     {
-        return self::tag("i", $content, $attributes);
+        return static::tag("i", $content, $attributes);
     }
     
     /**
@@ -745,7 +745,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("iframe", $content, $attributes);
+        return static::tag("iframe", $content, $attributes);
     }
     
     /**
@@ -755,7 +755,7 @@ class Html5 extends Html{
      */
     public static function img(array $attributes = []) : string
     {
-        return self::tag("img", '', $attributes);
+        return static::tag("img", '', $attributes);
     }
     
     /**
@@ -782,7 +782,7 @@ class Html5 extends Html{
             $preAttributesInput["value"] = $value;
         }
         $attributesInput = array_merge($preAttributesInput, $attributes);
-        return self::tag("input", "", $attributesInput);
+        return static::tag("input", "", $attributesInput);
     }
     
     /**
@@ -796,7 +796,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("ins", $content, $attributes);
+        return static::tag("ins", $content, $attributes);
     }
     
     /**
@@ -810,7 +810,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("kbd", $content, $attributes);
+        return static::tag("kbd", $content, $attributes);
     }
     
     /**
@@ -831,7 +831,7 @@ class Html5 extends Html{
             "for" => $for,
         ];
         $attributesLabel = array_merge($preAttributesLabel, $attributes);
-        return self::tag("label", $label, $attributesLabel);
+        return static::tag("label", $label, $attributesLabel);
     }
     
     /**
@@ -845,7 +845,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("legend", $content, $attributes);
+        return static::tag("legend", $content, $attributes);
     }
     
     /**
@@ -859,7 +859,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("link", $content, $attributes);
+        return static::tag("link", $content, $attributes);
     }
     
     /**
@@ -873,7 +873,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("main", $content, $attributes);
+        return static::tag("main", $content, $attributes);
     }
     
     /**
@@ -887,7 +887,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("map", $content, $attributes);
+        return static::tag("map", $content, $attributes);
     }
     
     /**
@@ -901,7 +901,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("mark", $content, $attributes);
+        return static::tag("mark", $content, $attributes);
     }
     
     /**
@@ -915,7 +915,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("menu", $content, $attributes);
+        return static::tag("menu", $content, $attributes);
     }
     
     /**
@@ -929,7 +929,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("menuitem", $content, $attributes);
+        return static::tag("menuitem", $content, $attributes);
     }
     
     /**
@@ -942,7 +942,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("meta", null, $attributes);
+        return static::tag("meta", null, $attributes);
     }
     
     /**
@@ -956,7 +956,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("meter", $content, $attributes);
+        return static::tag("meter", $content, $attributes);
     }
     
     /**
@@ -970,7 +970,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("nav", $content, $attributes);
+        return static::tag("nav", $content, $attributes);
     }
     
     /**
@@ -984,7 +984,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("noscript", $content, $attributes);
+        return static::tag("noscript", $content, $attributes);
     }
     
     /**
@@ -998,7 +998,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("object", $content, $attributes);
+        return static::tag("object", $content, $attributes);
     }
     
     /**
@@ -1012,7 +1012,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("optgroup", $content, $attributes);
+        return static::tag("optgroup", $content, $attributes);
     }
     
     /**
@@ -1026,7 +1026,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("option", $content, $attributes);
+        return static::tag("option", $content, $attributes);
     }
     
     /**
@@ -1040,7 +1040,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("output", $content, $attributes);
+        return static::tag("output", $content, $attributes);
     }
     
     /**
@@ -1054,7 +1054,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("p", $content, $attributes);
+        return static::tag("p", $content, $attributes);
     }
     
     /**
@@ -1066,7 +1066,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("param", null, $attributes);
+        return static::tag("param", null, $attributes);
     }
     
     /**
@@ -1080,7 +1080,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("picture", $content, $attributes);
+        return static::tag("picture", $content, $attributes);
     }
     
     /**
@@ -1094,7 +1094,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("pre", $content, $attributes);
+        return static::tag("pre", $content, $attributes);
     }
     
     /**
@@ -1108,7 +1108,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("progress", $content, $attributes);
+        return static::tag("progress", $content, $attributes);
     }
     
     /**
@@ -1122,7 +1122,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("q", $content, $attributes);
+        return static::tag("q", $content, $attributes);
     }
     
     /**
@@ -1136,7 +1136,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("rp", $content, $attributes);
+        return static::tag("rp", $content, $attributes);
     }
     
     /**
@@ -1150,7 +1150,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("rt", $content, $attributes);
+        return static::tag("rt", $content, $attributes);
     }
     
     /**
@@ -1164,7 +1164,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("ruby", $content, $attributes);
+        return static::tag("ruby", $content, $attributes);
     }
     
     /**
@@ -1178,7 +1178,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("s", $content, $attributes);
+        return static::tag("s", $content, $attributes);
     }
     
     /**
@@ -1192,7 +1192,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("samp", $content, $attributes);
+        return static::tag("samp", $content, $attributes);
     }
     
     /**
@@ -1210,7 +1210,7 @@ class Html5 extends Html{
         if ($addCdataTag) {
             $content = "\n//<![CDATA[\n" . $content ."\n//]]>\n";
         }
-        return self::tag("script", $content, $attributes);
+        return static::tag("script", $content, $attributes);
     }
     
     /**
@@ -1224,7 +1224,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("section", $content, $attributes);
+        return static::tag("section", $content, $attributes);
     }
     
     /**
@@ -1241,9 +1241,9 @@ class Html5 extends Html{
     ) : string
     {
         foreach ($options as $key => $val) {
-            $content .= $this->option($key, ["value" => $val]);
+            $content .= static::option($key, ["value" => $val]);
         }
-        return self::tag("select", $content, $attributes);
+        return static::tag("select", $content, $attributes);
     }
         
     /**
@@ -1257,7 +1257,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("small", $content, $attributes);
+        return static::tag("small", $content, $attributes);
     }
     
     /**
@@ -1270,7 +1270,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("source", null, $attributes);
+        return static::tag("source", null, $attributes);
     }
     
     /**
@@ -1285,7 +1285,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string 
     {
-        return self::tag("span", $content, $attributes);
+        return static::tag("span", $content, $attributes);
     }
     
     /**
@@ -1299,7 +1299,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("strong", $content, $attributes);
+        return static::tag("strong", $content, $attributes);
     }
     
     /**
@@ -1313,7 +1313,7 @@ class Html5 extends Html{
         array $attributes = ["type" => "text/css"]
     ) : string
     {
-        return self::tag("style", $content, $attributes);
+        return static::tag("style", $content, $attributes);
     }
     
     /**
@@ -1327,7 +1327,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("sub", $content, $attributes);
+        return static::tag("sub", $content, $attributes);
     }
     
     /**
@@ -1341,7 +1341,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("summary", $content, $attributes);
+        return static::tag("summary", $content, $attributes);
     }
     
     /**
@@ -1355,7 +1355,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("sup", $content, $attributes);
+        return static::tag("sup", $content, $attributes);
     }
     
     /**
@@ -1370,7 +1370,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("table", $content, $attributes);
+        return static::tag("table", $content, $attributes);
     }
     
     /**
@@ -1385,7 +1385,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("tbody", $content, $attributes);
+        return static::tag("tbody", $content, $attributes);
     }
     
     /**
@@ -1400,7 +1400,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("td", $content, $attributes);
+        return static::tag("td", $content, $attributes);
     }
     
     /**
@@ -1414,7 +1414,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("textarea", $content, $attributes);
+        return static::tag("textarea", $content, $attributes);
     }
     
     /**
@@ -1428,7 +1428,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("tfoot", $content, $attributes);
+        return static::tag("tfoot", $content, $attributes);
     }
     
     /**
@@ -1443,7 +1443,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string 
     {
-        return self::tag("th", $content, $attributes);
+        return static::tag("th", $content, $attributes);
     }
     
     /**
@@ -1458,7 +1458,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("thead", $content, $attributes);
+        return static::tag("thead", $content, $attributes);
     }
     
     /**
@@ -1472,7 +1472,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("time", $content, $attributes);
+        return static::tag("time", $content, $attributes);
     }
     
     /**
@@ -1484,7 +1484,7 @@ class Html5 extends Html{
      */
     public static function title(string $title, array $attributes = []) : string
     {
-        return self::tag("title", $title, $attributes);
+        return static::tag("title", $title, $attributes);
     }
     
     /**
@@ -1499,7 +1499,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("tr", $content, $attributes);
+        return static::tag("tr", $content, $attributes);
     }
     
     /**
@@ -1513,7 +1513,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("track", $content, $attributes);
+        return static::tag("track", $content, $attributes);
     }
     
     /**
@@ -1527,7 +1527,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("u", $content, $attributes);
+        return static::tag("u", $content, $attributes);
     }
     
     /**
@@ -1541,7 +1541,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("ul", $content, $attributes);
+        return static::tag("ul", $content, $attributes);
     }
     
     /**
@@ -1555,7 +1555,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("video", $content, $attributes);
+        return static::tag("video", $content, $attributes);
     }
     
     /**
@@ -1569,7 +1569,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("wbr", $content, $attributes);
+        return static::tag("wbr", $content, $attributes);
     }
     
     /**
@@ -1583,7 +1583,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("ol", $content, $attributes);
+        return static::tag("ol", $content, $attributes);
     }
     
     /**
@@ -1597,7 +1597,7 @@ class Html5 extends Html{
         array $attributes = []
     ) : string
     {
-        return self::tag("li", $content, $attributes);
+        return static::tag("li", $content, $attributes);
     }
     
     /****** Special Methods ******/
@@ -1631,18 +1631,18 @@ class Html5 extends Html{
         string $encoding = "utf-8"
     ) : string
     {
-        $headerContent = self::title($title)
+        $headerContent = static::title($title)
                         . $headers;
         
-        $head = self::head($headerContent);
-        $body = self::body($body);
+        $head = static::head($headerContent);
+        $body = static::body($body);
         
         $htmlAttributes = [
             "lang" => $lang,
         ];
         
-        return self::docType($encoding)
-               . self::html($head.$body, $htmlAttributes);
+        return static::docType($encoding)
+               . static::html($head.$body, $htmlAttributes);
     }
     
     /**
@@ -1663,20 +1663,20 @@ class Html5 extends Html{
         $strBody = "";
         
         foreach ($head as $thRow) {
-            $strHead .= self::renderTableHeaderRow($thRow);
+            $strHead .= static::renderTableHeaderRow($thRow);
         }
         if ($strHead != "") {
-            $strHead = self::thead($strHead);
+            $strHead = static::thead($strHead);
         }
         
         foreach ($body as $tr) {
-            $strBody .= self::renderTableRow($tr);
+            $strBody .= static::renderTableRow($tr);
         }
         if ($strBody != "") {
-            $strBody = self::tbody($strBody);
+            $strBody = static::tbody($strBody);
         }
         
-        return self::tag("table", $strHead.$strBody, $attributes);
+        return static::tag("table", $strHead.$strBody, $attributes);
     }
     
     /**
@@ -1688,9 +1688,9 @@ class Html5 extends Html{
     {
         $strRow = "";
         foreach ($arrCells as $td) {
-            $strRow .= self::td($td);
+            $strRow .= static::td($td);
         }
-        return self::tr($strRow);
+        return static::tr($strRow);
     }
     
     /**
@@ -1702,8 +1702,8 @@ class Html5 extends Html{
     {
         $strRow = "";
         foreach ($arrCells as $th) {
-            $strRow .= self::th($th);
+            $strRow .= static::th($th);
         }
-        return self::tr($strRow);
+        return static::tr($strRow);
     }
 }
